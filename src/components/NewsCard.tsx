@@ -20,20 +20,22 @@ export default function NewsCard({ article }: { article: Article }) {
 
         <h3 className="card-title">{article.title}</h3>
 
-        <p className="card-desc">
-          {article.description || ""}
-        </p>
+        {article.description && (
+          <p className="card-desc">{article.description}</p>
+        )}
 
-        <a
-          href={article.url}
-          target="_blank"
-          rel="noreferrer"
-          className="read-link"
-        >
-          Read full article
-        </a>
+        <div className="actions">
+          <a
+            href={article.url}
+            target="_blank"
+            rel="noreferrer"
+            className="read-link"
+          >
+            Read full article
+          </a>
 
-        <button className="button">Save</button>
+          <button className="button save-button">Save</button>
+        </div>
       </div>
     </div>
   );
